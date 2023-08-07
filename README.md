@@ -1,3 +1,6 @@
+<div align="center"><img src="https://inly.se/github.png" alt="Inly"/></div>
+<br />
+
 # Inly's presets for the duster package
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/inly/duster-presets.svg?style=flat-square)](https://packagist.org/packages/inly/duster-presets)
@@ -5,15 +8,7 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/inly/duster-presets/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/inly/duster-presets/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/inly/duster-presets.svg?style=flat-square)](https://packagist.org/packages/inly/duster-presets)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
-
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/duster-presets.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/duster-presets)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+To maintain the same presets for all projects the config files for [tighten/duster](https://github.com/tighten/duster) is stored here and published in each project. 
 
 ## Installation
 
@@ -23,43 +18,24 @@ You can install the package via composer:
 composer require inly/duster-presets
 ```
 
-You can publish and run the migrations with:
+You can publish and update the config files with:
 
 ```bash
-php artisan vendor:publish --tag="duster-presets-migrations"
-php artisan migrate
+php artisan vendor:publish --tag=laravel-assets --ansi --force
 ```
 
-You can publish the config file with:
+Add this to your `composer.json`:
+```json
+scripts: {
+    "lint": "./vendor/bin/duster lint",
+    "fix": "./vendor/bin/duster fix"
+}
+```
 
+You can now run duster with one of these commands:
 ```bash
-php artisan vendor:publish --tag="duster-presets-config"
-```
-
-This is the contents of the published config file:
-
-```php
-return [
-];
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="duster-presets-views"
-```
-
-## Usage
-
-```php
-$dusterPresets = new Inly\DusterPresets();
-echo $dusterPresets->echoPhrase('Hello, Inly!');
-```
-
-## Testing
-
-```bash
-composer test
+composer lint
+composer fix
 ```
 
 ## Changelog
@@ -76,8 +52,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [Inly Technology AB](https://github.com/InlyTechnology)
-- [All Contributors](../../contributors)
+- [Joel Jensen](https://github.com/Joel-Jensen)
 
 ## License
 
