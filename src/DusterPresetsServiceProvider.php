@@ -22,6 +22,6 @@ class DusterPresetsServiceProvider extends PackageServiceProvider
     {
         $this->publishes([
             $this->package->basePath('/pint.json') => base_path(),
-        ], "laravel-assets");
+        ], 'laravel-assets');
     }
 }
