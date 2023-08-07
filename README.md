@@ -15,7 +15,12 @@ To maintain the same presets for all projects the config files for [tighten/dust
 You can install the package via composer:
 
 ```bash
-composer require inly/duster-presets
+composer require inly/duster-presets --dev
+```
+
+Install duster if not already done:
+```bash
+composer require tightenco/duster --dev
 ```
 
 You can publish and update the config files with:
@@ -24,7 +29,7 @@ You can publish and update the config files with:
 php artisan vendor:publish --tag=laravel-assets --ansi --force
 ```
 
-Add this to your `composer.json`:
+Add this to your scrips in `composer.json`:
 ```json
 "lint": "./vendor/bin/duster lint",
 "fix": "./vendor/bin/duster fix"
