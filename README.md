@@ -26,10 +26,8 @@ php artisan vendor:publish --tag=laravel-assets --ansi --force
 
 Add this to your `composer.json`:
 ```json
-scripts: {
-    "lint": "./vendor/bin/duster lint",
-    "fix": "./vendor/bin/duster fix"
-}
+"lint": "./vendor/bin/duster lint",
+"fix": "./vendor/bin/duster fix"
 ```
 
 You can now run duster with one of these commands:
