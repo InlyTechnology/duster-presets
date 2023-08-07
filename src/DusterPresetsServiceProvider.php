@@ -21,8 +21,8 @@ class DusterPresetsServiceProvider extends PackageServiceProvider
     public function bootingPackage()
     {
         $this->publishes([
-            $this->package->basePath('/pint.json') => base_path("pint.json"),
-            $this->package->basePath('/tlint.json') => base_path("tlint.json"),
-        ], "laravel-assets");
+            $this->package->basePath('/pint.json') => base_path('pint.json'),
+            $this->package->basePath('/tlint.json') => base_path('tlint.json'),
+        ], 'laravel-assets');
     }
 }
