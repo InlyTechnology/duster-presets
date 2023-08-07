@@ -16,10 +16,13 @@ class DusterPresetsServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('duster-presets')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_duster-presets_table')
-            ->hasCommand(DusterPresetsCommand::class);
+            ->name('duster-presets');
+    }
+
+    public function bootingPackage()
+    {
+        $this->publishes([
+            $this->package->basePath('/pint.json') => base_path(),
+        ], "{$this->package->shortName()}-laravel-assets");
     }
 }
