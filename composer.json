@@ -22,28 +22,19 @@
     },
     "require-dev": {
         "laravel/pint": "^1.0",
-        "nunomaduro/collision": "^7.9",
-        "orchestra/testbench": "^8.0",
-        "pestphp/pest": "^2.0",
-        "pestphp/pest-plugin-arch": "^2.0",
-        "pestphp/pest-plugin-laravel": "^2.0"
+        "nunomaduro/collision": "^7.9"
     },
     "autoload": {
         "psr-4": {
-            "Inly\\DusterPresets\\": "src/",
-            "Inly\\DusterPresets\\Database\\Factories\\": "database/factories/"
+            "Inly\\DusterPresets\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Inly\\DusterPresets\\Tests\\": "tests/"
         }
     },
     "scripts": {
-        "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
         "analyse": "vendor/bin/phpstan analyse",
-        "test": "vendor/bin/pest",
-        "test-coverage": "vendor/bin/pest --coverage",
         "format": "vendor/bin/pint"
     },
     "config": {
@@ -57,10 +48,7 @@
         "laravel": {
             "providers": [
                 "Inly\\DusterPresets\\DusterPresetsServiceProvider"
-            ],
-            "aliases": {
-                "DusterPresets": "Inly\\DusterPresets\\Facades\\DusterPresets"
-            }
+            ]
         }
     },
     "minimum-stability": "dev",
