@@ -26,7 +26,7 @@ composer require tightenco/duster --dev
 You can publish and update the config files with:
 
 ```bash
-php artisan vendor:publish --tag=laravel-assets --ansi --force
+php artisan vendor:publish --tag="duster-presets" --ansi --force
 ```
 
 Add this to your scrips in `composer.json`:
